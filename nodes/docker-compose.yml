@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 networks:
   internal:
@@ -21,7 +21,7 @@ x-db-custom: &db-variables
 
 services:
   wallet:
-    image: registry.gitlab.com/trustcerts/trustchain/wallet:${IMAGE_TAG-dev}
+    image: trustcerts/trustchain-wallet:${IMAGE_TAG-dev}
     restart: ${RESTART-always}
     depends_on:
       - redis
@@ -34,7 +34,7 @@ services:
       internal:
 
   parse:
-    image: registry.gitlab.com/trustcerts/trustchain/parse:${IMAGE_TAG-dev}
+    image: trustcerts/trustchain-parse:${IMAGE_TAG-dev}
     restart: ${RESTART-always}
     depends_on:
       - redis
@@ -50,7 +50,7 @@ services:
       internal:
 
   persist:
-    image: registry.gitlab.com/trustcerts/trustchain/persist:${IMAGE_TAG-dev}
+    image: trustcerts/trustchain-persist:${IMAGE_TAG-dev}
     restart: ${RESTART-always}
     depends_on:
       - redis
@@ -63,7 +63,7 @@ services:
       internal:
 
   http:
-    image: registry.gitlab.com/trustcerts/trustchain/http-${NODE_TYPE}:${IMAGE_TAG-dev}
+    image: trustcerts/trustchain-http-${NODE_TYPE}:${IMAGE_TAG-dev}
     restart: ${RESTART-always}
     depends_on:
       - redis
@@ -83,7 +83,7 @@ services:
       internal:
 
   network:
-    image: registry.gitlab.com/trustcerts/trustchain/network-${NODE_TYPE}:${IMAGE_TAG-dev}
+    image: trustcerts/trustchain-network-${NODE_TYPE}:${IMAGE_TAG-dev}
     restart: ${RESTART-always}
     depends_on:
       - redis
