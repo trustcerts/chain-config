@@ -4,7 +4,7 @@ volumes:
   loki:
 
 x-loki-custom: &loki-variables
-  LOKI_URL: ${LOKI_URL-http://loki:3100}
+  LOKI_URL: http://loki:3100
   LOKI_LOG_LEVEL: ${LOKI_LOG_LEVEL-info}
 
 services:
@@ -26,3 +26,19 @@ services:
     environment: *loki-variables
   wallet:
     environment: *loki-variables
+
+
+
+  nginx:
+    image: beevelop/nginx-basic-auth
+    ports:
+      - "${LOKI_PORT-80}:80"
+    depends_on:
+      - loki
+    environment: 
+      - FORWARD_HOST=loki
+      - FORWARD_PORT=3100
+      - HTPASSWD=${HTPASSWD}
+    networks:
+      internal:
+
