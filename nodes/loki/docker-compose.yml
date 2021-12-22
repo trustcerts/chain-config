@@ -34,7 +34,7 @@ services:
     depends_on:
       - loki-intern
     environment: 
-      - FORWARD_HOST=loki
+      - FORWARD_HOST=loki-intern
       - FORWARD_PORT=3100
       - HTPASSWD=${HTPASSWD}
     networks:
