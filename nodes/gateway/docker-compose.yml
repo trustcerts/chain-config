@@ -4,4 +4,4 @@ services:
   http:
     environment:
       DID_NETWORK: ${DID_NETWORK}
-      IMPORT: ${IMPORT}
+      IMPORT: ${IMPORT-}

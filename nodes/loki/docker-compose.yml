@@ -6,7 +6,7 @@ volumes:
 x-loki-custom: &loki-variables
   LOKI_URL: http://loki:3100
   LOKI_LOG_LEVEL: ${LOKI_LOG_LEVEL-info}
-  LOKI_AUTH: ${LOKI_AUTH}
+  LOKI_AUTH: ${LOKI_AUTH-loki:loki}
 
 services:
   loki-intern:
@@ -35,7 +35,7 @@ services:
     environment: 
       - FORWARD_HOST=loki-intern
       - FORWARD_PORT=3100
-      - HTPASSWD=${LOKI_AUTH}
+      - HTPASSWD=${LOKI_AUTH-loki:loki}
     networks:
       internal:
 
