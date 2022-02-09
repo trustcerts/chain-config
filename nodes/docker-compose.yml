@@ -14,7 +14,7 @@ volumes:
 x-db-custom: &db-variables
   DB_TYPE: mongo
   DB_HOST: ${DB_HOST-db}
-  DB_PORT: ${DB_PORT-3306}
+  DB_PORT: ${DB_PORT-27017}
   DB_USERNAME: ${DB_USERNAME-root}
   DB_PASSWORD: ${DB_PASSWORD-rootpw}
   DB_DATABASE: ${DB_DATABASE-trustchain}
