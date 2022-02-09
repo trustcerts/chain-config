@@ -12,7 +12,7 @@ volumes:
   db_shared:
 
 x-db-custom: &db-variables
-  DB_TYPE: mysql
+  DB_TYPE: mongo
   DB_HOST: ${DB_HOST-db}
   DB_PORT: ${DB_PORT-3306}
   DB_USERNAME: ${DB_USERNAME-root}
