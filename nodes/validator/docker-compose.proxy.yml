@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 networks:
   proxy:
@@ -6,6 +6,10 @@ networks:
       name: proxy
 
 services:
+  http:
+    environment:
+      OWN_PEER: ${NETWORK_HOSTNAME-node}.${DOMAIN}
+
   network:
     environment:
       LETSENCRYPT_HOST: ${NETWORK_HOSTNAME-node}.${DOMAIN}

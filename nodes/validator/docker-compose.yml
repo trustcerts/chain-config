@@ -4,7 +4,6 @@ services:
   http:
     environment:
       DID_NETWORK: ${DID_NETWORK}
-      OWN_PEER: ${OWN_PEER}
   network:
     environment:
       DID_NETWORK: ${DID_NETWORK}
