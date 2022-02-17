@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 networks:
   test-network:
@@ -9,8 +9,10 @@ services:
   http:
     networks:
       test-network:
-    environment: 
+    environment:
       NETWORK_URL: ${NETWORK_URL-network}
+      FOO: bar
+
   network:
     environment:
       OWN_PEER: ${COMPOSE_PROJECT_NAME}_network_1:3000
