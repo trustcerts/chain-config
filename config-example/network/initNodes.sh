@@ -24,6 +24,4 @@ curl -X POST "http://localhost:4561/init" -H "accept: */*" -H "Authorization: Be
 curl -X POST "http://localhost:4571/init" -H "accept: */*" -H "Authorization: Bearer test" -H "Content-Type: application/json" -d "{\"id\":\"did:trust:tc:dev:id:6xNu7M86KFu4B4hYNNg2GD\",\"secret\":\"foobar\",\"url\":\"testing-validator1_http_1:3000\"}"
 echo "add client"
 curl -X POST "http://localhost:4541/did/invite" -H "accept: */*" -H "Authorization: Bearer test" -H "Content-Type: application/json" -d "{\"id\":\"did:trust:tc:dev:id:XLzBJ69tqEgq7oqqCLiEnT\",\"name\":\"client\",\"secret\":\"client\",\"role\":\"Client\"}" &
-curl -X POST "http://localhost:4541/did/invite" -H "accept: */*" -H "Authorization: Bearer test" -H "Content-Type: application/json" -d "{\"id\":\"did:trust:tc:dev:id:XLzBJ69tqEgHEALTHCHECK\",\"name\":\"Healthcheck\",\"secret\":\"Healthcheck\",\"role\":\"Client\"}" &
-curl -X POST "http://localhost:4541/did/invite" -H "accept: */*" -H "Authorization: Bearer test" -H "Content-Type: application/json" -d "{\"id\":\"did:trust:tc:dev:id:XLzBJ69tqEgq7qPLATForm\",\"name\":\"platform\",\"secret\":\"foobar\",\"role\":\"Client\"}"
 exit
