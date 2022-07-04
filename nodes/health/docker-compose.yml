@@ -10,11 +10,11 @@ services:
     volumes:
       - health:/health
     environment:
-      STORAGE: "/health/config.json"
+      CONFIG_FOLDER: "/health"
       REPEAT: ${HEALTH_REPEAT}
-      NAME: ${HEALTH_NAME}
-      IDENTIFIER: ${HEALTH_IDENTIFIER}
-      SECRET: ${HEALTH_SECRET}
-      GATEWAY: ${HEALTH_GATEWAY}
-      OBSERVER: ${HEALTH_OBSERVER}
-      BC_ID: ${HEALTH_BC_ID}
+      BC_ID: ${HEALTH_IDENTIFIER}
+      BC_INVITE: ${HEALTH_SECRET}
+      BC_NAME: ${HEALTH_NAME}
+      BC_GATEWAY: ${HEALTH_GATEWAY}
+      BC_OBSERVER: ${HEALTH_OBSERVER}
+      BC_NETWORK: ${HEALTH_BC_ID}
