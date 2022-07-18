@@ -12,7 +12,5 @@ services:
       VIRTUAL_HOST: ${GRAFANA_HOSTNAME-grafana}.${DOMAIN}
       VIRTUAL_PORT: 3000
       GF_SERVER_ROOT_URL: https://grafana.${DOMAIN}
-      SLACK_URL: ${SLACK_URL}
-      SLACK_TOKEN: ${SLACK_TOKEN}
     networks:
       proxy:
