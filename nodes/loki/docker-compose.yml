@@ -29,6 +29,7 @@ services:
 
   loki:
     image: beevelop/nginx-basic-auth
+    restart: ${RESTART-always}
     depends_on:
       - loki-intern
     environment:

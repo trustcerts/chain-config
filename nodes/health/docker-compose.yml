@@ -6,7 +6,7 @@ volumes:
 services:
   health:
     image: trustcerts/trustchain-health-check
-    restart: always
+    restart: ${RESTART-always}
     volumes:
       - health:/health
     environment:
