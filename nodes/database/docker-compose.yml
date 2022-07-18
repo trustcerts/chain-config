@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 volumes:
   db:
@@ -13,6 +13,6 @@ services:
       MONGO_INITDB_DATABASE: ${DB_DATABASE-trustchain}
     volumes:
       - db:/data/db
-      - ./database/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./database/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
     networks:
       internal:
