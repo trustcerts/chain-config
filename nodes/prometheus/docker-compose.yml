@@ -7,7 +7,7 @@ volumes:
   prometheus:
 
 services:
-  prometheus:
+  prometheus-intern:
     image: prom/prometheus
     restart: ${RESTART-always}
     volumes:
@@ -17,3 +17,15 @@ services:
       - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
       internal:
+
+  prometheus:
+      image: beevelop/nginx-basic-auth
+      restart: ${RESTART-always}
+      depends_on:
+        - prometheus-intern
+      environment:
+        - FORWARD_HOST=prometheus-intern
+        - FORWARD_PORT=9090
+        - HTPASSWD=${PROMETHEUS_AUTH}
+      networks:
+        internal: 
