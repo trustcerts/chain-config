@@ -9,6 +9,8 @@ docker-compose \
     -f "$NODE_PATH/prometheus/docker-compose.port.yml" \
     -f "$NODE_PATH/database/docker-compose.yml" \
     -f "$NODE_PATH/database/docker-compose.port.yml" \
+    -f "$NODE_PATH/grafana/docker-compose.yml" \
+    -f "$NODE_PATH/grafana/docker-compose.port.yml" \
     -f "$NODE_PATH/validator/docker-compose.yml" \
     -f "$NODE_PATH/validator/docker-compose.port.yml" \
     -f "$NODE_PATH/docker-compose.docker.yml" \
